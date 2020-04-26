@@ -1,0 +1,424 @@
+include ./mixins.pug
+
+<!DOCTYPE html>
+html(lang="ru")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible" content="ie=edge")
+    title Eshop
+  body
+    .wrapper
+      header.header
+        .header__top
+          .cities.header__cities
+            ul.cities__list
+              -var items = ['Санкт-Петербург']
+                each item in items
+                  li.cities__item
+                    a.cities__link=item
+          h1.header__title Официальный магазин 
+            span.visually-hidden Montblanc
+          .header__links
+            .site-links
+              ul.site-links__list
+                -
+                  var siteLinks = [
+                    {
+                      title: 'О магазине',
+                      link: '#',
+                      desc: 'Перейти на страницу О магазине'
+                    }
+                  ];
+                each siteLink in siteLinks
+                  li.site-links__item
+                    a(href=`${siteLink.link}` target="_blank" title=`${siteLink.desc}`).site-links__link= siteLink.title
+            .user-menu
+              ul.user-menu__list
+                -
+                  var userLinks = [
+                    {
+                      title: 'Личный кабинет',
+                      link: '#',
+                      desc: 'Перейти на страницу Личного кабинета'
+                    }
+                  ]
+                each userLink in userLinks
+                  li.user-menu__item
+                    a(href=`${userLink.link}` target="_blank" title=`${userLink.desc}`).user-menu__link= userLink.title
+        .header__bottom
+          .burger-menu.header__burger-menu
+            ul.burger-menu__list
+              -var burgerMenuList = []
+          .search.header__search
+            input.search__field(type="search")
+          a.logo(href="" title="Логотип магазина Montblanc")
+            .logo__image
+              +image('content/mtb-logo.png', 'logo__icon')
+          .header__controls
+            .favorite
+              button(type="button" aria-label="Посмотреть избранные товары").favorite__button
+            .basket
+              button(type="button" aria-label="Посмотреть корзину").basket__button
+      main.main
+        .hero
+          .hero__slider
+            ul.slider__list
+              -
+                var sliderList = [
+                  {
+                    title: 'В гармонии с пространством и временем',
+                    desc: 'Вернуться к работе с подарком от Montblanc'
+                  }
+                ];
+              each sliderItem in sliderList
+                li.slider__item
+                  .slider__info
+                    .slider__title=sliderItem.title
+                    .slider__desc=sliderItem.desc
+                    a(href="" target="_blank").slider__link Подробнее
+            ul.slider__switcher.slider-switcher
+              -
+                var sliderLinks = ['','','','']
+              each item in sliderLinks
+                li.slider-switcher__item
+                  a.slider-switcher__link=item
+        .offers
+          .categories
+            ul.categories__list
+              - 
+                var categories = [
+                  'Письменные принадлежности',
+                  'Изделия из кожи',
+                  'Часы и аксессуары',
+                  'Подарки для всех'
+                ];
+              each category in categories
+                li.categories__item
+                  a(href="" target="_blank").categories__link=category
+          .features
+            h3.features__title Преимущества официального магазина Montblanc
+            ul.features__list
+              -
+                var features = [
+                  {
+                    title: 'Бесплатная доставка',
+                    desc: 'Cras rhoncus risus et odio facilisis, vel varius velit ultrices. Morbi quis dolor turpis.'
+                  },
+                  {
+                    title: 'Официальные поставки',
+                    desc: 'Cras rhoncus risus et odio facilisis, vel varius velit ultrices. Morbi quis dolor turpis.'
+                  },
+                  {
+                    title: 'Возврат без проблем',
+                    desc: 'Cras rhoncus risus et odio facilisis, vel varius velit ultrices. Morbi quis dolor turpis.'
+                  }
+                ];
+              each feature in features
+                li.features__item
+                  .features__title=feature.title
+                  .features__desc=feature.desc
+          .new-products
+            .slider.new-products__slider
+              button(type="button").slider__button.slider__button--left <
+              ul.new-products__list
+                - 
+                  var newProducts = [
+                    {
+                      title: 'Шариковая ручка PIX черного цвета',
+                      priceInt: '14',
+                      priceDec: '900',
+                    },
+                    {
+                      title: 'Бумажник Meisterstück 6 с',
+                      priceInt: '9',
+                      priceDec: '300',
+                    },
+                    {
+                      title: 'Роллер PIX черного цвета',
+                      priceInt: '17',
+                      priceDec: '900',
+                    },
+                    {
+                      title: 'Бумажник 6 сс',
+                      priceInt: '19',
+                      priceDec: '000',
+                    },
+                  ];
+                each newProduct in newProducts
+                  li.new-products__item
+                    .product
+                      .product__image
+                        img.product__image-pic(src="" alt="")
+                      .product__title=newProduct.title
+                      .product__price
+                        span.product__price-integer=newProduct.priceInt
+                        span.product__price-decimal=newProduct.priceDec
+                        span.product__price-currency р.
+                      button(type="product").product__button Купить
+              button(type="button").slider__button.slider__button--right >
+        .special-offers
+          ul.special-offers__list
+            -
+              var specialOffers = [
+                {
+                  title: 'Meisterstück Soft Grain My Office',
+                  tag: 'Новые поступления',
+                  period: 'Только до 29 сентября'
+                },
+                {
+                  title: 'Star Legacy - современное воплощение наследния мануфактуры Minerva',
+                  tag: 'Стиль нового времени',
+                  period: 'Предложение ограничено'
+                },
+                {
+                  title: 'PIX - лидер продаж',
+                  tag: 'Классические наборы',
+                  period: 'Только до 15 октября'
+                },
+              ]
+            each specialOffer in specialOffers
+              li.special-offers__item
+                .special-offers__visual
+                  .special-offers__image
+                    img.special-offer__picture(src="" alt="")
+                  .special-offers__period=specialOffer.period
+                .special-offers__tag
+                  p=specialOffer.tag
+                .special-offers__title
+                  p=specialOffer.title
+                a(href="" target="_blank") Подробнее
+        .promo
+          .promo__banner.promo-banner
+            h2.promo-banner__title В гармонии с пространством и временем
+            .promo-banner__desc
+              p Деловые поездки без границ
+            a(href="" target="_blank") Подробнее
+          .promo__product
+            .product
+              .product__image
+                img.product__image-pic(src="" alt="")
+              .product__title Набор Meisterstück Le Petit Prince Happy Holiday
+              .product__price
+                span.product__price-integer 14
+                span.product__price-decimal 900
+                span.product__price-currency р.
+            button(type="product").product__button Купить
+        .popular-offers
+          ul.popular-offers__list
+            - 
+              var popularOffers = [
+                {
+                  title: 'Портфель Meisterstück с 1 отделением',
+                  price: '77,900'
+                },
+                {
+                  title: 'Плоская сумка для документов Meisterstück Soft Grain',
+                  price: '56,700',
+                },
+                {
+                  title: 'Большая сумка для документов Meisterstück Soft Grain',
+                  price: '85,800',
+                },
+                {
+                  title: 'Большая сумка для документов Meisterstück Soft Grain',
+                  price: '64,000',
+                },
+              ];
+            each popularOffer in popularOffers
+              li.popular-offers__item
+                .product
+                  .product__iamge
+                    img.product__picture(src="" alt="")
+                  .product__title=popularOffer.title
+                  .product__price=popularOffer.price
+                    span.product__price-currency р.
+                  button(type="product").product__button Купить
+        .help-me
+          p Нужна помощь?
+          a(href="#" target="_blank").help-me__link Свяжитесь с нами
+      footer.footer
+        .footer__top
+          nav.bottom-nav.footer__bottom-nav
+            h3.bottom-nav__title Свяжитесь с нами
+            ul.bottom-nav__list
+              - 
+                var bottomNavList = [
+                  {
+                    title: 'Категории',
+                    list: [
+                      {
+                        title: 'Подарки',
+                        link: '#',
+                      },
+                      {
+                        title: 'Пишущие инструменты',
+                        link: '#',
+                      },
+                      {
+                        title: 'Изделия из кожи',
+                        link: '#'
+                      },
+                      {
+                        title: 'Smart-устройства',
+                        link: '#'
+                      },
+                      {
+                        title: 'Часы',
+                        link: '#'
+                      },
+                      {
+                        title: 'Аксессуары',
+                        link: '#'
+                      },
+                      {
+                        title: 'Бумага и чернила',
+                        link: '#'
+                      },
+                    ]
+                  },
+                  {
+                    title: 'Покупателям',
+                    list: [
+                      {
+                        title: 'Самовывоз',
+                        link: '#'
+                      },
+                      {
+                        title: 'Оплата',
+                        link: '#'
+                      },
+                      {
+                        title: 'Обмен и возврат',
+                        link: '#'
+                      },
+                      {
+                        title: 'Гарантия',
+                        link: '#'
+                      }
+                    ]
+                  },
+                  {
+                    title: 'Информация',
+                    list: [
+                      {
+                        title: 'О магазине',
+                        link: '#'
+                      },
+                      {
+                        title: 'Правовая информация',
+                        link: '#'
+                      },
+                      {
+                        title: 'Контакты',
+                        link: '#'
+                      },
+                      {
+                        title: 'Гарантия',
+                        link: '#'
+                      }
+                    ]
+                  },
+                ]
+              each bottomNavItem in bottomNavList
+                li.bottom-nav__item.subnav
+                  .subnav__title=bottomNavItem.title
+                  ul.subnav__list
+                    each item in bottomNavItem.list
+                      li.subnav__item
+                        a(href=item.link target="_blank").subnav__link=item.title
+                  if bottomNavItem.title === 'Информация'
+                    .contacts
+                      a.contacts__phone(href="tel:+78003446780" title="Позвоните нам по телефону 88003446780") 8 800 344-67-80
+                      .contacts__workhours Пн–Пт: 9–21, Сб–Вс: 9–18
+          .subscribe.footer__subscribe
+            h4.subscribe__title Подписаться на рассылку
+            .subscribe__field
+              input(type="email" placeholder="Введите ваш e-mail").subscribe__input
+            .subscribe__desc Нажимая кнопку «Подписаться», вы даете согласие на обработку своих 
+              a(href="#" target="_blank" title="Ознакомьтесь с нашей политикой по хранению, обработке и защите персональных данных").subscribe__link персональных данных
+              |  и 
+              a(href="#" target="_blank" title="Ознакомьтесь с условиями подписки на наши новости").subscribe__link получение информационных сообщений.
+          .socials.footer__socials
+            ul.socials__list
+              - 
+                var socials = [
+                  {
+                    title: 'Мы в Twitter',
+                    link: '#',
+                    iconSrc: ''
+                  },
+                  {
+                    title: 'Мы в Linkedin',
+                    link: '#',
+                    iconSrc: ''
+                  },
+                  {
+                    title: 'Мы на Youtube',
+                    link: '#',
+                    iconSrc: ''
+                  },
+                  {
+                    title: 'Мы на Facebook',
+                    link: '#',
+                    iconSrc: ''
+                  }
+                ]
+              each social in socials
+                li.socials__item
+                  a(href=social.link target="_blank" title=social.title)
+                    .socials__image
+                      svg.socials__image-pic
+        .footer__bottom
+          .footer__links.footer-links
+            ul.footer-links__list
+              -
+                var footerLinks = [
+                  {
+                    title: '2019 Официальный интернет-магазин MONBLANC',
+                    link: '#',
+                    desc: 'Все права защищены'
+
+                  },
+                  {
+                    title: 'Правовая информация',
+                    link: '#',
+                    desc: 'Страничка с правовой информвацией'
+                  },
+                  {
+                    title: 'Положение об обработке и защите персональных данных',
+                    link: '#',
+                    desc: 'Ознакомьтесь с нашим Положением об обработке и защите персональных данных'
+                  },
+                ]
+              each footerLink in footerLinks
+                li.footer-links__item
+                  a(href=`${footerLink.link}` title=`${footerLink.desc}`).footer-links__link=footerLink.title
+          .pay-systems.footer__pay-systems
+            ul.pay-systems__list
+              - 
+                var paySystems = [
+                  {
+                    title: '',
+                    link: '#',
+                    desc: 'Платёжная система МИР',
+                    iconSrc: ''
+                  },
+                  {
+                    title: '',
+                    link: '#',
+                    desc: 'Платёжная система Visa',
+                    iconSrc: ''
+                  },
+                  {
+                    title: '',
+                    link: '#',
+                    desc: 'Платёжная система Mastercard',
+                    iconSrc: ''
+                  },
+                ]
+              each paySystem in paySystems
+                li.pay-systems__item
+                  a(href=`${paySystem.link}` target="_blank" title=`${paySystem.desc}`)
+                    .pay-systems__icon
+                      svg.pay-systems__icon-pic
