@@ -5,8 +5,8 @@
 
 ##  Чтобы развернуть проект необходимо:
 ```sh
-$ git clone git@github.com:loftschool/ls-advanced-portfolio.git
-$ cd ls-advanced-portfolio
+$ git clone https://github.com/romien94/eproject.git
+$ cd eproject
 $ yarn
 ```
 
