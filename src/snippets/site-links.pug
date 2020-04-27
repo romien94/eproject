@@ -1,0 +1,13 @@
+.site-links
+  ul.site-links__list
+    -
+      var siteLinks = [
+        {
+          title: 'О магазине',
+          link: '#',
+          desc: 'Перейти на страницу О магазине'
+        }
+      ];
+    each siteLink in siteLinks
+      li.site-links__item
+        a(href=`${siteLink.link}` target="_blank" title=`${siteLink.desc}`).site-links__link= siteLink.title

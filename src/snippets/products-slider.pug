@@ -1,0 +1,38 @@
+.products-slider.products-slider__slider
+  button(type="button").slider__button.slider__button--left <
+  ul.products-slider__list
+    - 
+      var newProducts = [
+        {
+          title: 'Шариковая ручка PIX черного цвета',
+          priceInt: '14',
+          priceDec: '900',
+        },
+        {
+          title: 'Бумажник Meisterstück 6 с',
+          priceInt: '9',
+          priceDec: '300',
+        },
+        {
+          title: 'Роллер PIX черного цвета',
+          priceInt: '17',
+          priceDec: '900',
+        },
+        {
+          title: 'Бумажник 6 сс',
+          priceInt: '19',
+          priceDec: '000',
+        },
+      ];
+    each newProduct in newProducts
+      li.products-slider__item
+        .product
+          .product__image
+            img.product__image-pic(src="" alt="")
+          .product__title=newProduct.title
+          .product__price
+            span.product__price-integer=newProduct.priceInt
+            span.product__price-decimal=newProduct.priceDec
+            span.product__price-currency р.
+          button(type="product").product__button Купить
+  button(type="button").slider__button.slider__button--right >

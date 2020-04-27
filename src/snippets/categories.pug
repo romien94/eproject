@@ -1,0 +1,12 @@
+.categories
+  ul.categories__list
+    - 
+      var categories = [
+        'Письменные принадлежности',
+        'Изделия из кожи',
+        'Часы и аксессуары',
+        'Подарки для всех'
+      ];
+    each category in categories
+      li.categories__item
+        a(href="" target="_blank").categories__link=category

@@ -1,0 +1,92 @@
+nav.bottom-nav.footer__bottom-nav
+  h3.bottom-nav__title Свяжитесь с нами
+  ul.bottom-nav__list
+    - 
+      var bottomNavList = [
+        {
+          title: 'Категории',
+          list: [
+            {
+              title: 'Подарки',
+              link: '#',
+            },
+            {
+              title: 'Пишущие инструменты',
+              link: '#',
+            },
+            {
+              title: 'Изделия из кожи',
+              link: '#'
+            },
+            {
+              title: 'Smart-устройства',
+              link: '#'
+            },
+            {
+              title: 'Часы',
+              link: '#'
+            },
+            {
+              title: 'Аксессуары',
+              link: '#'
+            },
+            {
+              title: 'Бумага и чернила',
+              link: '#'
+            },
+          ]
+        },
+        {
+          title: 'Покупателям',
+          list: [
+            {
+              title: 'Самовывоз',
+              link: '#'
+            },
+            {
+              title: 'Оплата',
+              link: '#'
+            },
+            {
+              title: 'Обмен и возврат',
+              link: '#'
+            },
+            {
+              title: 'Гарантия',
+              link: '#'
+            }
+          ]
+        },
+        {
+          title: 'Информация',
+          list: [
+            {
+              title: 'О магазине',
+              link: '#'
+            },
+            {
+              title: 'Правовая информация',
+              link: '#'
+            },
+            {
+              title: 'Контакты',
+              link: '#'
+            },
+            {
+              title: 'Гарантия',
+              link: '#'
+            }
+          ]
+        },
+      ]
+    each bottomNavItem in bottomNavList
+      li.bottom-nav__item.subnav
+        .subnav__title=bottomNavItem.title
+        ul.subnav__list
+          each item in bottomNavItem.list
+            li.subnav__item
+              a(href=item.link target="_blank").subnav__link=item.title
+        if bottomNavItem.title === 'Информация'
+          .contacts
+            a.contacts__phone(href="tel:+78003446780" title="Позвоните нам по телефону 88003446780") 8 800 344-67-80
+            .contacts__workhours Пн–Пт: 9–21, Сб–Вс: 9–18

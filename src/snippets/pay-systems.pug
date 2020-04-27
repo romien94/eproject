@@ -1,0 +1,28 @@
+.pay-systems.footer__pay-systems
+  ul.pay-systems__list
+    - 
+      var paySystems = [
+        {
+          title: '',
+          link: '#',
+          desc: 'Платёжная система МИР',
+          iconSrc: ''
+        },
+        {
+          title: '',
+          link: '#',
+          desc: 'Платёжная система Visa',
+          iconSrc: ''
+        },
+        {
+          title: '',
+          link: '#',
+          desc: 'Платёжная система Mastercard',
+          iconSrc: ''
+        },
+      ]
+    each paySystem in paySystems
+      li.pay-systems__item
+        a(href=`${paySystem.link}` target="_blank" title=`${paySystem.desc}`)
+          .pay-systems__icon
+            svg.pay-systems__icon-pic

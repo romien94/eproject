@@ -1,0 +1,13 @@
+.user-menu
+  ul.user-menu__list
+    -
+      var userLinks = [
+        {
+          title: 'Личный кабинет',
+          link: '#',
+          desc: 'Перейти на страницу Личного кабинета'
+        }
+      ]
+    each userLink in userLinks
+      li.user-menu__item
+        a(href=`${userLink.link}` target="_blank" title=`${userLink.desc}`).user-menu__link= userLink.title

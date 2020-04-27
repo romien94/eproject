@@ -1,0 +1,21 @@
+.slider
+  ul.slider__list
+    -
+      var sliderList = [
+        {
+          title: 'В гармонии с пространством и временем',
+          desc: 'Вернуться к работе с подарком от Montblanc'
+        }
+      ];
+    each sliderItem in sliderList
+      li.slider__item
+        .slider__info
+          .slider__title=sliderItem.title
+          .slider__desc=sliderItem.desc
+          a(href="" target="_blank").slider__link Подробнее
+  ul.slider__switcher.slider-switcher
+    -
+      var sliderLinks = ['','','','']
+    each item in sliderLinks
+      li.slider-switcher__item
+        a.slider-switcher__link=item

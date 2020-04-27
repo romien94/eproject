@@ -1,0 +1,24 @@
+.footer__links.footer-links
+  ul.footer-links__list
+    -
+      var footerLinks = [
+        {
+          title: '2019 Официальный интернет-магазин MONBLANC',
+          link: '#',
+          desc: 'Все права защищены'
+
+        },
+        {
+          title: 'Правовая информация',
+          link: '#',
+          desc: 'Страничка с правовой информвацией'
+        },
+        {
+          title: 'Положение об обработке и защите персональных данных',
+          link: '#',
+          desc: 'Ознакомьтесь с нашим Положением об обработке и защите персональных данных'
+        },
+      ]
+    each footerLink in footerLinks
+      li.footer-links__item
+        a(href=`${footerLink.link}` title=`${footerLink.desc}`).footer-links__link=footerLink.title

@@ -1,0 +1,31 @@
+.special-offers
+  ul.special-offers__list
+    -
+      var specialOffers = [
+        {
+          title: 'Meisterstück Soft Grain My Office',
+          tag: 'Новые поступления',
+          period: 'Только до 29 сентября'
+        },
+        {
+          title: 'Star Legacy - современное воплощение наследния мануфактуры Minerva',
+          tag: 'Стиль нового времени',
+          period: 'Предложение ограничено'
+        },
+        {
+          title: 'PIX - лидер продаж',
+          tag: 'Классические наборы',
+          period: 'Только до 15 октября'
+        },
+      ]
+    each specialOffer in specialOffers
+      li.special-offers__item
+        .special-offers__visual
+          .special-offers__image
+            img.special-offer__picture(src="" alt="")
+          .special-offers__period=specialOffer.period
+        .special-offers__tag
+          p=specialOffer.tag
+        .special-offers__title
+          p=specialOffer.title
+        a(href="" target="_blank") Подробнее

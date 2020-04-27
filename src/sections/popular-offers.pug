@@ -1,0 +1,30 @@
+.popular-offers
+  ul.popular-offers__list
+    - 
+      var popularOffers = [
+        {
+          title: 'Портфель Meisterstück с 1 отделением',
+          price: '77,900'
+        },
+        {
+          title: 'Плоская сумка для документов Meisterstück Soft Grain',
+          price: '56,700',
+        },
+        {
+          title: 'Большая сумка для документов Meisterstück Soft Grain',
+          price: '85,800',
+        },
+        {
+          title: 'Большая сумка для документов Meisterstück Soft Grain',
+          price: '64,000',
+        },
+      ];
+    each popularOffer in popularOffers
+      li.popular-offers__item
+        .product
+          .product__iamge
+            img.product__picture(src="" alt="")
+          .product__title=popularOffer.title
+          .product__price=popularOffer.price
+            span.product__price-currency р.
+          button(type="product").product__button Купить
