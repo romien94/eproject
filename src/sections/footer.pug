@@ -1,9 +1,11 @@
 footer.footer
-  .footer__top
-    include bottom-nav.pug
-    include ../snippets/subscribe.pug
-    include ../snippets/socials.pug    
-  .footer__bottom
-    include ../snippets/footer-links.pug
-    include ../snippets/pay-systems.pug
-    
+  .container
+    .footer__top
+      .footer__column
+        include bottom-nav.pug
+      .footer__column.footer__column--vertical
+        include ../snippets/subscribe.pug
+        include ../snippets/socials.pug
+    .footer__bottom
+      include ../snippets/copyright.pug
+      include ../snippets/pay-systems.pug

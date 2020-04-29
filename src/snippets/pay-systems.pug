@@ -6,23 +6,23 @@
           title: '',
           link: '#',
           desc: 'Платёжная система МИР',
-          iconSrc: ''
+          iconSrc: 'mir'
         },
         {
           title: '',
           link: '#',
           desc: 'Платёжная система Visa',
-          iconSrc: ''
+          iconSrc: 'visa'
         },
         {
           title: '',
           link: '#',
           desc: 'Платёжная система Mastercard',
-          iconSrc: ''
+          iconSrc: 'mastercard'
         },
       ]
     each paySystem in paySystems
       li.pay-systems__item
         a(href=`${paySystem.link}` target="_blank" title=`${paySystem.desc}`)
           .pay-systems__icon
-            svg.pay-systems__icon-pic
+            +icon(`${paySystem.iconSrc}`, 'pay-systems__icon-pic')

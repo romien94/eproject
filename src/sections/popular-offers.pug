@@ -1,30 +1,39 @@
 .popular-offers
-  ul.popular-offers__list
-    - 
-      var popularOffers = [
-        {
-          title: 'Портфель Meisterstück с 1 отделением',
-          price: '77,900'
-        },
-        {
-          title: 'Плоская сумка для документов Meisterstück Soft Grain',
-          price: '56,700',
-        },
-        {
-          title: 'Большая сумка для документов Meisterstück Soft Grain',
-          price: '85,800',
-        },
-        {
-          title: 'Большая сумка для документов Meisterstück Soft Grain',
-          price: '64,000',
-        },
-      ];
-    each popularOffer in popularOffers
-      li.popular-offers__item
-        .product
-          .product__iamge
-            img.product__picture(src="" alt="")
-          .product__title=popularOffer.title
-          .product__price=popularOffer.price
-            span.product__price-currency р.
-          button(type="product").product__button Купить
+  .container
+    h2.section-title Самые популярные товары
+    .product-slider
+      button(type="button").slider__button.slider__button--left
+      ul.products-slider__list
+        - 
+          var popularOffers = [
+            {
+              title: 'Портфель Meisterstück с 1 отделением',
+              price: '77,900',
+              imgSrc: 'bag-1.png'
+            },
+            {
+              title: 'Плоская сумка для документов Meisterstück Soft Grain',
+              price: '56,700',
+              imgSrc: 'bag-2.png'
+            },
+            {
+              title: 'Большая сумка для документов Meisterstück Soft Grain',
+              price: '85,800',
+              imgSrc: 'bag-3.png'
+            },
+            {
+              title: 'Большая сумка для документов Meisterstück Soft Grain',
+              price: '64,000',
+              imgSrc: 'bag-4.png'
+            },
+          ];
+        each popularOffer in popularOffers
+          li.products-slider__item
+            .product
+              .product__image
+                +image(`content/popular-offers/${popularOffer.imgSrc}`, 'product__picture')
+              .product__title=popularOffer.title
+              .product__price=popularOffer.price
+                span.product__price-currency р.
+              button(type="product").product__button Купить
+        button(type="button").slider__button.slider__button--right

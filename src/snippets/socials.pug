@@ -1,30 +1,31 @@
 .socials.footer__socials
+  h4.socials__title Мы в социальных сетях
   ul.socials__list
     - 
       var socials = [
         {
           title: 'Мы в Twitter',
           link: '#',
-          iconSrc: ''
+          iconSrc: 'twitter'
         },
         {
           title: 'Мы в Linkedin',
           link: '#',
-          iconSrc: ''
+          iconSrc: 'linkedin'
         },
         {
           title: 'Мы на Youtube',
           link: '#',
-          iconSrc: ''
+          iconSrc: 'youtube'
         },
         {
           title: 'Мы на Facebook',
           link: '#',
-          iconSrc: ''
+          iconSrc: 'facebook'
         }
       ]
     each social in socials
       li.socials__item
         a(href=social.link target="_blank" title=social.title)
           .socials__image
-            svg.socials__image-pic
+            +icon(`${social.iconSrc}`,'socials__image-icon')

@@ -1,31 +1,35 @@
 .special-offers
-  ul.special-offers__list
-    -
-      var specialOffers = [
-        {
-          title: 'Meisterstück Soft Grain My Office',
-          tag: 'Новые поступления',
-          period: 'Только до 29 сентября'
-        },
-        {
-          title: 'Star Legacy - современное воплощение наследния мануфактуры Minerva',
-          tag: 'Стиль нового времени',
-          period: 'Предложение ограничено'
-        },
-        {
-          title: 'PIX - лидер продаж',
-          tag: 'Классические наборы',
-          period: 'Только до 15 октября'
-        },
-      ]
-    each specialOffer in specialOffers
-      li.special-offers__item
-        .special-offers__visual
-          .special-offers__image
-            img.special-offer__picture(src="" alt="")
-          .special-offers__period=specialOffer.period
-        .special-offers__tag
-          p=specialOffer.tag
-        .special-offers__title
-          p=specialOffer.title
-        a(href="" target="_blank") Подробнее
+  .container
+    h2.section-title Акции и предложения
+    ul.special-offers__list
+      -
+        var specialOffers = [
+          {
+            title: 'Meisterstück Soft Grain My Office',
+            tag: 'Новые поступления',
+            period: 'Только до 29 сентября',
+            imgSrc: 'special-1.png'
+          },
+          {
+            title: 'Star Legacy - современное воплощение наследния мануфактуры Minerva',
+            tag: 'Стиль нового времени',
+            period: 'Предложение ограничено',
+            imgSrc: 'special-2.png'
+          },
+          {
+            title: 'PIX - лидер продаж',
+            tag: 'Классические наборы',
+            period: 'Только до 15 октября',
+            imgSrc: 'special-3.png'
+          },
+        ]
+      each specialOffer in specialOffers
+        li.special-offers__item
+          .special-offers__visual
+            .special-offers__image
+              +image(`content/special-offers/${specialOffer.imgSrc}`, 'special-offers__picture')
+            .special-offers__period=specialOffer.period
+          .special-offers__content
+            .special-offers__tag=specialOffer.tag
+            .special-offers__title=specialOffer.title
+            a(href="" target="_blank").special-offers__link Подробнее

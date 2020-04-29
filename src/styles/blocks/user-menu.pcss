@@ -1,0 +1,27 @@
+.user-menu {
+  display: flex;
+}
+
+.user-menu:after{
+  display: block;
+  content: '';
+  width: 5px;
+  height: 5px;
+  border: 2px solid white;
+  border-top-color: transparent;
+  border-right-color: transparent;
+  border-radius: 4px;
+  left: 100%;
+  transform: rotate(-45deg);
+  align-self: center;
+  margin-left: 10px;
+}
+
+.user-menu__list {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-menu__link {
+  text-decoration: none;
+}

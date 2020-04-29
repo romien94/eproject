@@ -2,11 +2,25 @@
   ul.categories__list
     - 
       var categories = [
-        'Письменные принадлежности',
-        'Изделия из кожи',
-        'Часы и аксессуары',
-        'Подарки для всех'
+        {
+          title: 'Письменные принадлежности',
+          imgSrc: 'content/categories/writing.png'
+        },
+        {
+          title: 'Изделия из кожи',
+          imgSrc: 'content/categories/leather.png'
+        },
+        {
+          title: 'Часы и аксессуары',
+          imgSrc: 'content/categories/accessories.png'
+        },
+        {
+          title: 'Подарки для всех',
+          imgSrc: 'content/categories/presents.png'
+        }
       ];
     each category in categories
       li.categories__item
-        a(href="" target="_blank").categories__link=category
+        a(href="" target="_blank").categories__link
+          span.categories__title=category.title
+          +image(`${category.imgSrc}`).categories__image

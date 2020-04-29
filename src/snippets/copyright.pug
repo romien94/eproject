@@ -1,5 +1,5 @@
-.footer__links.footer-links
-  ul.footer-links__list
+.copyright.footer__copyright
+  ul.copyright__list
     -
       var footerLinks = [
         {
@@ -20,5 +20,5 @@
         },
       ]
     each footerLink in footerLinks
-      li.footer-links__item
-        a(href=`${footerLink.link}` title=`${footerLink.desc}`).footer-links__link=footerLink.title
+      li.copyright__item
+        a(href=`${footerLink.link}` title=`${footerLink.desc}`).copyright__link=footerLink.title
