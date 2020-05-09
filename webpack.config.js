@@ -9,7 +9,7 @@ const TerserPlugin = require("terser-webpack-plugin");
 
 module.exports = (env, argv) => {
   const isProductionBuild = argv.mode === "production";
-  const publicPath = '/';
+  const publicPath = '/eproject/';
 
   const pcss = {
     test: /\.(p|post|)css$/,
@@ -114,7 +114,7 @@ module.exports = (env, argv) => {
     },
     plugins: [
       new HtmlWebpackPlugin({
-        template: "src/index.pug",
+        template: "src/templates/index.pug",
         chunks: ["main"]
       }),
       new HtmlWebpackPlugin({
@@ -122,6 +122,25 @@ module.exports = (env, argv) => {
         filename: "admin/index.html",
         chunks: ["admin"]
       }),
+      new HtmlWebpackPlugin({
+        template: "src/templates/main-products.pug",
+        chunks: ["main"]
+      }),
+      new HtmlWebpackPlugin({
+        template: "src/admin/main-products.pug",
+        filename: "admin/main-products.html",
+        chunks: ["admin"]
+      }),
+      new HtmlWebpackPlugin({
+        template: "src/templates/product.pug",
+        chunks: ["main"]
+      }),
+      new HtmlWebpackPlugin({
+        template: "src/admin/product.pug",
+        filename: "admin/product.html",
+        chunks: ["admin"]
+      }),
+
       new SpriteLoaderPlugin({ plainSprite: true }),
       new VueLoaderPlugin()
     ],

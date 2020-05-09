@@ -1,0 +1,79 @@
+section.products
+  .container.products__container
+    h2.section-title Кожаные сумки
+    .products__controls
+      button.sort-price Сортировать по цене (сначала дорогие)
+    ul.products__list
+      -
+        var products = [
+          {
+            title: 'Сумка для документов среднего размера Montblanc Extreme 2.0',
+            price: '45,000',
+            imgSrc: 'montblanc-extreme-1'
+          },
+          {
+            title: 'Сумка для документов среднего размера Montblanc Extreme 2.0',
+            price: '67,900',
+            imgSrc: 'montblanc-extreme-2'
+          },
+          {
+            title: 'Сумка для документов среднего размера Montblanc Extreme 2.0',
+            price: '87,000',
+            imgSrc: 'westside-4810'
+          },
+          {
+            title: 'Сумка для документов среднего размера Montblanc Extreme 2.0',
+            price: '56,000',
+            imgSrc: 'meisterstuk-1'
+          },
+          {
+            title: 'Сумка для документов среднего размера Montblanc Extreme 2.0',
+            price: '67,900',
+            imgSrc: 'westside-4810-big'
+          },
+          {
+            title: 'Сумка для документов среднего размера Montblanc Extreme 2.0',
+            price: '87,000',
+            imgSrc: 'westside-4810-2'
+          },
+          {
+            title: 'Сумка для документов среднего размера Montblanc Extreme 2.0',
+            price: '69,300',
+            imgSrc: 'meisterstuk-2'
+          },
+          {
+            title: 'Сумка для документов среднего размера Montblanc Extreme 2.0',
+            price: '77,900',
+            imgSrc: 'montblanc-extreme-3'
+          },
+          {
+            title: 'Сумка для документов среднего размера Montblanc Extreme 2.0',
+            price: '19,000',
+            imgSrc: 'montblanc-extreme-4'
+          },
+          {
+            title: 'Сумка для документов среднего размера Montblanc Extreme 2.0',
+            price: '89,300',
+            imgSrc: 'meisterstuk-bag'
+          },
+          {
+            title: 'Сумка для документов среднего размера Montblanc Extreme 2.0',
+            price: '43,400',
+            imgSrc: 'montblanc-extreme-5'
+          },
+          {
+            title: 'Сумка для документов среднего размера Montblanc Extreme 2.0',
+            price: '55,000',
+            imgSrc: 'montblanc-extreme-6'
+          },
+        ]
+      each item in products
+        li.products__item
+          .product
+            .product__image
+              +image(`content/products/${item.imgSrc}.png`,'product__image-pic')
+            .product__title=item.title
+            .product__price
+              span.product__price=item.price+' '
+              span.product__price-currency р.
+            button(type="product").product__button Купить

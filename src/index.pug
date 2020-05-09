@@ -7,23 +7,19 @@ html(lang="ru")
     meta(name="viewport" content="width=device-width, initial-scale=1.0")
     meta(http-equiv="X-UA-Compatible" content="ie=edge")
     title Eshop
-    link(rel="stylesheet", href="https://fonts.googleapis.com/css2?family=Roboto&display=swap")
   body
     .wrapper
-
-      //- HEADER
       include ./sections/header.pug
+      +appHeader('header--black')
 
-      //- MAIN
+      //- MAIN 
       main.main
-        include ./sections/hero.pug
-        include ./sections/offers.pug
-        include ./sections/special-offers.pug
-        include ./sections/promo.pug
-        include ./sections/popular-offers.pug
-        include ./sections/help-me.pug
-      
+        include ./snippets/breadcrumbs
+        +breadcrumbs(['Каталог','Изделия из кожи','Кожаные сумки'],2)
+        include ./sections/banner
+        include ./sections/main-list
+        include ./sections/features
+        include ./sections/help-me
+
       //- FOOTER
       include ./sections/footer.pug
-
-      

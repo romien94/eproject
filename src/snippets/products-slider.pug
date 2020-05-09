@@ -1,43 +1,15 @@
-.products-slider.products-slider__slider
-  button(type="button").slider__button.slider__button--left
-  ul.products-slider__list
-    - 
-      var newProducts = [
-        {
-          title: 'Шариковая ручка PIX черного цвета',
-          priceInt: '14',
-          priceDec: '900',
-          imgSrc: 'pen.png'
-        },
-        {
-          title: 'Бумажник Meisterstück 6 с',
-          priceInt: '9',
-          priceDec: '300',
-          imgSrc: 'portmone.png'
-        },
-        {
-          title: 'Роллер PIX черного цвета',
-          priceInt: '17',
-          priceDec: '900',
-          imgSrc: 'roller.png'
-        },
-        {
-          title: 'Бумажник 6 сс',
-          priceInt: '19',
-          priceDec: '000',
-          imgSrc: 'purse.png'
-        },
-      ];
-    each newProduct in newProducts
-      li.products-slider__item
-        .product
-          .product__image
-            +image(`content/products/${newProduct.imgSrc}`,'product__image-pic')
-            //- img.product__image-pic(src=`content/${imgSrc}` alt="")
-          .product__title=newProduct.title
-          .product__price
-            span.product__price-integer=newProduct.priceInt
-            span.product__price-decimal=','+newProduct.priceDec
-            span.product__price-currency р.
-          button(type="product").product__button Купить
-  button(type="button").slider__button.slider__button--right
+mixin products-slider(sectionSrc,items)
+  .products-slider
+    button(type="button").slider__button.slider__button--left
+    ul.products-slider__list
+      each item in items
+        li.products-slider__item
+          .product
+            .product__image
+              +image(`content/${sectionSrc}/${item.imgSrc}.png`,'product__image-pic')
+            .product__title=item.title
+            .product__price
+              span.product__price=item.price+' '
+              span.product__price-currency р.
+            button(type="product").product__button Купить
+    button(type="button").slider__button.slider__button--right

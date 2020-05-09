@@ -1,0 +1,10 @@
+mixin delivery(className,items,title)
+  .delivery
+    table.delivery__info(items,title)
+      td.delivery__title= `Город доставки: г. ${title}`
+      each item in items
+        tr.delivery__row
+          td.delivery__col.delivery__col--gray
+            .delivery__col--text=item.col1
+            .delivery__col-dotted
+          td.delivery__col=item.col2

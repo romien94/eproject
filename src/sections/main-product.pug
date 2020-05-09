@@ -1,0 +1,45 @@
+section.main-product
+  include ../snippets/breadcrumbs
+  +breadcrumbs(['Каталог','Изделия из кожи','Кожаные сумки', 'Сумки для документов 4810 Westside'],3)
+  .container.main-product__container
+    .main-product__visual
+      .main-product__photo-counter
+        span.main-product__current-num 1
+        span.main-product__total-num 5
+      button.main-product__button.main-product__button--left 
+        +icon('arrow')
+      .main-product__photo
+        +image('content/main-product/main-product-1.png','main-product__photo-image')
+      button.main-product__button.main-product__button--right
+        +icon('arrow')
+    .main-product__info
+      .compare
+        button.compare-button Добавить в сравнение
+          +icon('compare','compare-button__icon')
+      h3.main-product__title Сумка для документов 4810 Westside
+      span.main-product__vendor-number Артикул 118631
+      span.main-product__price 67,900 р.
+      button.basket-button.basket-button--big Добавить в корзину
+      button.rapid-buy-button Быстрый заказ
+      include ../snippets/delivery.pug
+      +delivery('main-product__delivery',[
+        {
+          col1: 'Доставка по Москве',
+          col2: '10 сентября'
+        },
+        {
+          col1: 'Стоимость доставки',
+          col2: 'Бесплатно'
+        },
+        {
+          col1: 'Самовывоз',
+          col2: 'Сегодня, бесплатно'
+        },
+        ],'Москва')
+      .main-product__controls
+        button(class="button button--gray" id="favorite-button") Список пожеланий
+          +icon('favorite','button__icon')
+        button(class="button button--gray" id="share-button") Поделиться
+          +icon('favorite','button__icon')
+        button(class="button button--gray" id="personalize-button") Персонализация
+          +icon('personalization','button__icon')

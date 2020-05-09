@@ -1,0 +1,26 @@
+section.similar-products
+  .container
+    h2.section-title.section-title--big Похожие товары
+    include ../snippets/products-slider
+    +products-slider('similar-products',[
+      {
+        title: 'Портфель Meisterstück с 1 отделением',
+        price: '77,900',
+        imgSrc: 'meisterstuck-1'
+      },
+      {
+        title: 'Плоская сумка для документов Meisterstück Soft Grain',
+        price: '56,700',
+        imgSrc: 'meisterstuck-2'
+      },
+      {
+        title: 'Большая сумка для документов Meisterstück Soft Grain',
+        price: '85,800',
+        imgSrc: 'meisterstuck-3'
+      },
+      {
+        title: 'Сумка для документов Meisterstück Sfumato',
+        price: '64,000',
+        imgSrc: 'meisterstuck-4'
+      },
+    ])

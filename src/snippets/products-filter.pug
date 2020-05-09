@@ -1,0 +1,29 @@
+.products__filter.products-filter
+  form.products-filter__form
+    .products-filter__row
+      h3.products-filter__title Цена
+    .products-filter__row.products-filter__row--opened
+      h3.products-filter__title Коллекция
+      ul.products-filter__list
+        -
+          var collections = [
+            'Montblanc Extreme 2.0',
+            'Meisterstück',
+            'Meisterstück Selection',
+            'Meisterstück Sfumato ',
+            'Meisterstück Soft Grain ',
+            'Montblanc Sartorial',
+            'Montblanc Sartorial Jet',
+            'My Montblanc Nightflight',
+            'Urban Racing Spirit',
+            'Meisterstück Urban',
+          ]
+        each item in collections
+          li(class="products-filter__item" value=`${item}`)
+            label.products-filter__label
+              input(class="products-filter__checkbox" type="checkbox", name="")
+              h4.products-filter__name=item
+    .products-filter__row
+      h3.products-filter__title Цвет
+    .products-filter__row
+      h3.products-filter__title Размер

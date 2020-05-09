@@ -1,0 +1,7 @@
+mixin breadcrumbs(items,activeItem)
+  .breadcrumbs
+    .container
+      ul.breadcrumbs__list
+        each item,index in items
+          li(class="breadcrumbs__item" + ((index === activeItem)? ' breadcrumbs__item--active' : ''))
+            a.breadcrumbs__link=item

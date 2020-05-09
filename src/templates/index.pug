@@ -1,4 +1,4 @@
-include ./mixins.pug
+include ../mixins.pug
 
 <!DOCTYPE html>
 html(lang="ru")
@@ -9,17 +9,18 @@ html(lang="ru")
     title Eshop
   body
     .wrapper
-
       //- HEADER
       include ../sections/header.pug
+      +appHeader()
 
-      //- MAIN
+      //- MAIN 
       main.main
         include ../sections/hero.pug
         include ../sections/offers.pug
         include ../sections/special-offers.pug
         include ../sections/promo.pug
         include ../sections/popular-offers.pug
-      
+        include ../sections/help-me.pug
+
       //- FOOTER
       include ../sections/footer.pug

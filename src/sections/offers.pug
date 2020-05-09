@@ -1,7 +1,29 @@
 section.offers.section
   .container
     include ../snippets/categories.pug
-    include ../snippets/features.pug
+    include ../sections/features.pug
     .new-products
       h2.section-title Новинки интернет-магазина
       include ../snippets/products-slider.pug
+      +products-slider('products',[
+        {
+          title: 'Шариковая ручка PIX черного цвета',
+          price: '14,900',
+          imgSrc: 'pen'
+        },
+        {
+          title: 'Бумажник Meisterstück 6 с',
+          price: '9,300',
+          imgSrc: 'portmone'
+        },
+        {
+          title: 'Роллер PIX черного цвета',
+          price: '17,900',
+          imgSrc: 'roller'
+        },
+        {
+          title: 'Бумажник 6 сс',
+          price: '19,000',
+          imgSrc: 'purse'
+        }
+      ])
