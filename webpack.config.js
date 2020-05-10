@@ -124,6 +124,7 @@ module.exports = (env, argv) => {
       }),
       new HtmlWebpackPlugin({
         template: "src/templates/main-products.pug",
+        filename: "main-products.html",
         chunks: ["main"]
       }),
       new HtmlWebpackPlugin({
@@ -133,6 +134,7 @@ module.exports = (env, argv) => {
       }),
       new HtmlWebpackPlugin({
         template: "src/templates/product.pug",
+        filename: "product.html",
         chunks: ["main"]
       }),
       new HtmlWebpackPlugin({
